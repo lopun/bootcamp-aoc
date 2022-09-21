@@ -9,31 +9,61 @@
 ;; 주어진 입력의 숫자를 더할 때 마다 나오는 숫자 중, 처음으로 두번 나오는 숫자를 리턴하시오.
 ;; 예) +3, +3, +4, -2, -4 는 10이 처음으로 두번 나오는 숫자임.
 ;; 0 -> 3 (+3) -> 6 (+3) -> 10(+4) -> 8(-2) -> 4(-4) -> 7(+3) -> 10(+3) -> ...
+;; Tips.) loop recursive, cycle, repeat maybe?
 
 ;; +1, -200, ...
 
-;; (defn apply_arithmetic_expr [prev_num expr]
-;;   (cond (= (get expr 0) \+) (+ prev_num (Integer/parseInt (subs expr 1)))
-;;         (= (get expr 0) \-) (- prev_num (Integer/parseInt (subs expr 1)))
-;;         (= (get expr 0) \/) (/ prev_num (Integer/parseInt (subs expr 1)))
-;;         (= (get expr 0) \*) (* prev_num (Integer/parseInt (subs expr 1)))))
+;; (defn apply-arithmetic-expr [prev-num expr]
+;;   (cond (= (get expr 0) \+) (+ prev-num (Integer/parseInt (subs expr 1)))
+;;         (= (get expr 0) \-) (- prev-num (Integer/parseInt (subs expr 1)))
+;;         (= (get expr 0) \/) (/ prev-num (Integer/parseInt (subs expr 1)))
+;;         (= (get expr 0) \*) (* prev-num (Integer/parseInt (subs expr 1)))))
 
-(defn read_file_as_list []
-  (clojure.string/split (slurp "resources/aoc2018_1.txt") #"\n"))
+(defn read-file-as-list [input_src]
+  (clojure.string/split (slurp input_src) #"\n"))
 
-(defn convert_str_list_to_int_list [str_list]
-  (map (fn [x] (Integer/parseInt x)) str_list))
+(defn convert-str-list-to-int-list
+  "
+  input: [\"+1\" \"-1\"]
+  output: [1 -1]
+  "
+  [str-list]
+  (map #(Integer/parseInt %) str-list))
+
+(defn part1-solution []
+   (reduce + (convert-str-list-to-int-list (read-file-as-list  "resources/aoc2018_1_1.txt"))))
+
+;; (defn part2-solution []
+;;   (let [
+;;         input-list (read-file-as-list)
+;;         input-count (count input-list)
+;;       ] 
+;;       (->> (range (- input-count 1)) 
+;;         (map (fn [index]
+;;           (reduce + (convert-str-list-to-int-list (take (+ index 1) input-list)))))
+;;            )))
+
+(defn find-earliest-2nd-occurrence-sum-value [input-list]
+  (loop [current-input-list input-list
+         sum-value 0
+         sum-occurrence-map {}]
+    (let [new-sum-value (+ (first current-input-list) sum-value)]
+      (if (or (get sum-occurrence-map new-sum-value) (= (count current-input-list) 0))
+        new-sum-value
+        (recur (rest current-input-list) new-sum-value (assoc sum-occurrence-map new-sum-value true))))))
+
+(defn part2-solution []
+  (->> (read-file-as-list "resources/aoc2018_1_2.txt")
+       (map #(Integer/parseInt %))
+       (find-earliest-2nd-occurrence-sum-value)))
+
 
 (comment 
     (+ 1 1)
-    (read_file_as_list)
-    (convert_str_list_to_int_list (read_file_as_list))
-    (reduce + (convert_str_list_to_int_list (read_file_as_list)))
-  )
-
-(defn main []
-   (reduce + (convert_str_list_to_int_list (read_file_as_list))))
-
+    (read-file-as-list  "resources/aoc2018_1_2.txt")
+    (part2-solution)
+    (assoc {} :key "value"))
+  
 
 ;; (defn f [y]
 ;; (let [a (g x)] 

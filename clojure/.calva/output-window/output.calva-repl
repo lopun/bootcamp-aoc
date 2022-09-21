@@ -1,9 +1,3 @@
-; This is the Calva evaluation results output window.
-; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
-;   when connected to a REPL session.
-; Please see https://calva.io/output/ for more info.
-; Happy coding! ♥️
-
 ; Jacking in...
 ; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
 ; Hooking up nREPL sessions...
@@ -18,47 +12,50 @@
 clj꞉user꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj꞉user꞉> 
-
-(+ 1 1)
-2
-clj꞉user꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(main)
-; Execution error (FileNotFoundException) at java.io.FileInputStream/open0 (FileInputStream.java:-2).
-; src/lopun_clojure_bootcamp/problem_01/input.txt (No such file or directory)
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-(main)
-; Execution error (FileNotFoundException) at java.io.FileInputStream/open0 (FileInputStream.java:-2).
-; src/lopun_clojure_bootcamp/problem_01/input.txt (No such file or directory)
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(main)
-84
-nil
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(main)
-"84"
-clj꞉aoc2018-1꞉> 
 ; Evaluating file: aoc2018_1.clj
 nil
 clj꞉aoc2018-1꞉> 
-"84"
+0 3 {}
+3 6 {3 true}
+6 9 {3 true, 6 true}
+9 12 {3 true, 6 true, 9 true}
+12 15 {3 true, 6 true, 9 true, 12 true}
+15 18 {3 true, 6 true, 9 true, 12 true, 15 true}
+18 21 {3 true, 6 true, 9 true, 12 true, 15 true, 18 true}
+21 24 {3 true, 6 true, 9 true, 12 true, 15 true, 18 true, 21 true}
+24 27 {3 true, 6 true, 9 true, 12 true, 15 true, 18 true, 21 true, 24 true}
+27 30 {27 true, 24 true, 15 true, 21 true, 6 true, 3 true, 12 true, 9 true, 18 true}
+30 33 {27 true, 24 true, 15 true, 21 true, 6 true, 3 true, 12 true, 9 true, 30 true, 18 true}
+33
+clj꞉aoc2018-1꞉> 
+#'aoc2018-1/f
+clj꞉aoc2018-1꞉> 
+(3 3 4 -2 -4 3 3 -2 5 -3) 0 3 {}
+(3 4 -2 -4 3 3 -2 5 -3) 3 6 {3 true}
+(4 -2 -4 3 3 -2 5 -3) 6 9 {3 true, 6 true}
+(-2 -4 3 3 -2 5 -3) 9 12 {3 true, 6 true, 9 true}
+(-4 3 3 -2 5 -3) 12 15 {3 true, 6 true, 9 true, 12 true}
+(3 3 -2 5 -3) 15 18 {3 true, 6 true, 9 true, 12 true, 15 true}
+(3 -2 5 -3) 18 21 {3 true, 6 true, 9 true, 12 true, 15 true, 18 true}
+(-2 5 -3) 21 24 {3 true, 6 true, 9 true, 12 true, 15 true, 18 true, 21 true}
+(5 -3) 24 27 {3 true, 6 true, 9 true, 12 true, 15 true, 18 true, 21 true, 24 true}
+(-3) 27 30 {27 true, 24 true, 15 true, 21 true, 6 true, 3 true, 12 true, 9 true, 18 true}
+() 30 33 {27 true, 24 true, 15 true, 21 true, 6 true, 3 true, 12 true, 9 true, 30 true, 18 true}
+33
+clj꞉aoc2018-1꞉> 
+; Running tests for aoc2018-1...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-1꞉> 
+#'aoc2018-1/f
+clj꞉aoc2018-1꞉> 
+(3 3 4 -2 -4 3 3 -2 5 -3) 0 3 {}
+(3 4 -2 -4 3 3 -2 5 -3) 3 6 {3 true}
+(4 -2 -4 3 3 -2 5 -3) 6 10 {3 true, 6 true}
+(-2 -4 3 3 -2 5 -3) 10 8 {3 true, 6 true, 10 true}
+(-4 3 3 -2 5 -3) 8 4 {3 true, 6 true, 10 true, 8 true}
+(3 3 -2 5 -3) 4 7 {3 true, 6 true, 10 true, 8 true, 4 true}
+(3 -2 5 -3) 7 10 {3 true, 6 true, 10 true, 8 true, 4 true, 7 true}
+10
 clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
@@ -66,30 +63,34 @@ clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-1꞉> 
-100
+; Running tests for aoc2018-1...
+; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-1꞉> 
--100
+#'aoc2018-1/part2-solution
+clj꞉aoc2018-1꞉> 
+#function[aoc2018-1/part2-solution/fn--7924]
 clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
+#'aoc2018-1/part2-solution
+clj꞉aoc2018-1꞉> 
+#function[aoc2018-1/part2-solution/fn--7936]
+clj꞉aoc2018-1꞉> 
+#'aoc2018-1/part2-solution
+clj꞉aoc2018-1꞉> 
+#function[aoc2018-1/part2-solution/fn--7962]
 clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:35:5).
-; Unable to resolve symbol: sum_all_item_in_list in this context
+#'aoc2018-1/part2-solution
+clj꞉aoc2018-1꞉> 
+; Execution error (ArityException) at aoc2018-1/part2-solution (REPL:49).
+; Wrong number of args (10) passed to: aoc2018-1/part2-solution/fn--7978
 clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:35:5).
-; Unable to resolve symbol: sum_all_item_in_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:34:5).
-; Unable to resolve symbol: sum_all_item_in_list in this context
 clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
@@ -97,6 +98,29 @@ clj꞉aoc2018-1꞉> 
 ; Evaluating file: aoc2018_1.clj
 nil
 clj꞉aoc2018-1꞉> 
+10
+clj꞉aoc2018-1꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:46:16).
+; Unable to resolve symbol: check-frequency-existence in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error (UnsupportedOperationException) compiling recur at (src/aoc2018_2.clj:99:18).
+; Can only recur from tail position
+clj꞉aoc2018-2꞉> 
 ; Jacking in...
 ; nREPL Connection was closed
 ; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
@@ -112,1008 +136,87 @@ clj꞉aoc2018-1꞉> 
 clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
-; Evaluating file: aoc2018_1.clj
-nil
-clj꞉aoc2018-1꞉> 
-nil
-clj꞉aoc2018-1꞉> 
-(main)
-; Execution error (NumberFormatException) at java.lang.NumberFormatException/forInputString (NumberFormatException.java:67).
-; For input string: "..##......."
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Integer cannot be cast to class clojure.lang.IFn (java.lang.Integer is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-; Jacking in...
-; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
-; nREPL Connection was closed
-; Hooking up nREPL sessions...
-; Connected session: clj
-; TIPS:
-;   - You can edit the contents here. Use it as a REPL if you like.
-;   - `alt+enter` evaluates the current top level form.
-;   - `ctrl+enter` evaluates the current form.
-;   - `alt+up` and `alt+down` traverse up and down the REPL command history
-;      when the cursor is after the last contents at the prompt
-;   - Clojure lines in stack traces are peekable and clickable.
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-(main)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:145:1).
-; Unable to resolve symbol: main in this context
-clj꞉user꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:34:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:34:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:34:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:34:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-(main)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:167:1).
-; Unable to resolve symbol: main in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:35:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:35:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:30:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:30:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-2
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:31:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Execution error (ClassCastException) at aoc2018-1/eval7897 (REPL:31).
-; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:31:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Syntax error compiling at (src/aoc2018_1.clj:31:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> (main)
-; Execution error (ArityException) at aoc2018-1/main (aoc2018_1.clj:37).
-; Wrong number of args (1) passed to: aoc2018-1/read-file-as-list
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(main)
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Integer cannot be cast to class clojure.lang.IFn (java.lang.Integer is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(main)
-(1 1 -3 120 -35)
-clj꞉aoc2018-1꞉> 
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(main)
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Integer cannot be cast to class clojure.lang.IFn (java.lang.Integer is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-2
-clj꞉aoc2018-1꞉> 
-["+1" "+1" "-3" "+120" "-35"]
-clj꞉aoc2018-1꞉> 
-(1 1 -3 120 -35)
-clj꞉aoc2018-1꞉> 
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Integer cannot be cast to class clojure.lang.IFn (java.lang.Integer is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-{1 1 2 }
-; Syntax error reading source at (REPL:240:9).
-; Map literal must contain an even number of forms
-clj꞉aoc2018-1꞉> 
-(1 1 2 3 4 )
-; Execution error (ClassCastException) at aoc2018-1/eval7990 (REPL:244).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> sum_all_item_in_list [1,2,3 ]
-[1 2 3]
-clj꞉aoc2018-1꞉> 
-(sum_all_item_in_list [1,2,3])
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-(sum_all_item_in_list #[1,2,3])
-; Syntax error reading source at (REPL:254:31).
-; Reader tag must be a symbol
-clj꞉aoc2018-1꞉> 
-(sum_all_item_in_list ( 1,2,3 ))
-
-; Execution error (ClassCastException) at aoc2018-1/eval7996 (REPL:258).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-(sum_all_item_in_list [1 2 3])
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Integer cannot be cast to class clojure.lang.IFn (java.lang.Integer is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(sum_all_item_in_list [1 2 3])
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-(1 1 -3 120 -35)
-clj꞉aoc2018-1꞉> 
-84
-clj꞉aoc2018-1꞉> 
-; Execution error (ClassCastException) at aoc2018-1/sum-all-item-in-list$fn (aoc2018_1.clj:27).
-; class java.lang.Integer cannot be cast to class clojure.lang.IFn (java.lang.Integer is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Evaluating file: aoc2018_1.clj
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-(sum_all_item_in_list [1 2 3])
-6
-clj꞉aoc2018-1꞉> 
-84
-clj꞉aoc2018-1꞉> 
-#'aoc2018-1/sum_all_item_in_list
-clj꞉aoc2018-1꞉> 
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-#'aoc2018-1/main
-clj꞉aoc2018-1꞉> 
-84
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-1...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-1꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:15).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉aoc2018-2꞉> 
 ; Evaluating file: aoc2018_2.clj
-; WARNING: count already refers to: #'clojure.core/count in namespace: aoc2018-2, being replaced by: #'aoc2018-2/count
-nil
+; Syntax error (UnsupportedOperationException) compiling recur at (src/aoc2018_2.clj:99:18).
+; Can only recur from tail position
+; Evaluation of file aoc2018_2.clj failed: class clojure.lang.Compiler$CompilerException
 clj꞉aoc2018-2꞉> 
-; Jacking in...
-; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
-; nREPL Connection was closed
-; Hooking up nREPL sessions...
-; Connected session: clj
-; TIPS:
-;   - You can edit the contents here. Use it as a REPL if you like.
-;   - `alt+enter` evaluates the current top level form.
-;   - `ctrl+enter` evaluates the current form.
-;   - `alt+up` and `alt+down` traverse up and down the REPL command history
-;      when the cursor is after the last contents at the prompt
-;   - Clojure lines in stack traces are peekable and clickable.
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:41:5).
-; Unable to resolve symbol: read_file_as_list in this context
+#'aoc2018-2/f
 clj꞉aoc2018-2꞉> 
-2
+#'aoc2018-2/part2-solution
 clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:42:3).
-; Unable to resolve symbol: read_file_as_list in this context
+; Execution error (NullPointerException) at aoc2018-2/f (REPL:99).
+; Cannot invoke "clojure.lang.IFn.invoke()" because "result" is null
 clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
+#'aoc2018-2/f
 clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
+#'aoc2018-2/part2-solution
 clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-; WARNING: count already refers to: #'clojure.core/count in namespace: aoc2018-2, being replaced by: #'aoc2018-2/count
-nil
-clj꞉aoc2018-2꞉> 
-; Jacking in...
-; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
-; nREPL Connection was closed
-; Hooking up nREPL sessions...
-; Connected session: clj
-; TIPS:
-;   - You can edit the contents here. Use it as a REPL if you like.
-;   - `alt+enter` evaluates the current top level form.
-;   - `ctrl+enter` evaluates the current form.
-;   - `alt+up` and `alt+down` traverse up and down the REPL command history
-;      when the cursor is after the last contents at the prompt
-;   - Clojure lines in stack traces are peekable and clickable.
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-(read_file_as_list)
-; Syntax error compiling at (.calva/output-window/output.calva-repl:403:1).
-; Unable to resolve symbol: read_file_as_list in this context
-clj꞉user꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-; WARNING: count already refers to: #'clojure.core/count in namespace: aoc2018-2, being replaced by: #'aoc2018-2/count
-nil
-clj꞉aoc2018-2꞉> 
-(read_file_as_list)
-["abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab"]
-clj꞉aoc2018-2꞉> 
-["abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab"]
-clj꞉aoc2018-2꞉> 
-{"a" ["a"], "b" ["b"], "c" ["c"], "d" ["d"], "e" ["e"], "f" ["f"]}
-clj꞉aoc2018-2꞉> 
-{"b" ["b" "b" "b"], "a" ["a" "a"], "c" ["c"]}
-clj꞉aoc2018-2꞉> 
-{"b" ["b" "b" "b"], "a" ["a" "a"], "c" ["c"]}
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/count
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
-; Wrong number of args (0) passed to: clojure.lang.MapEntry
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
-; Wrong number of args (0) passed to: clojure.lang.MapEntry
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/count
-clj꞉aoc2018-2꞉> 
-{"b" 3, "a" 2, "c" 1}
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:46:17).
-; Unable to resolve symbol: count_frequencies in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:46:17).
-; Unable to resolve symbol: count_frequencies in this context
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-  (doseq [[k x] (count_frequencies (get (read_file_as_list) 1))] (println k ":" x))
-b : 3
-a : 2
-c : 1
-nil
-clj꞉aoc2018-2꞉> 
-b : 3
-a : 2
-c : 1
-nil
-clj꞉aoc2018-2꞉> 
-b : 3
-a : 2
-c : 1
-nil
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/eval7974 (REPL:46).
-; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/eval7988 (REPL:46).
-; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-[["b" 3] ["a" 2] ["c" 1]]
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/check_duplicates_and_count
-clj꞉aoc2018-2꞉> 
-[b 3]
-(nil[a 2]
- nil[c 1]
- nil)
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Jacking in...
-; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
-; nREPL Connection was closed
-("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
-clj꞉aoc2018-2꞉> 
-; Error printing return value (IllegalArgumentException) at clojure.lang.RT/seqFrom (RT.java:557).
-; Don't know how to create ISeq from: aoc2018_2$read_file_as_list
-clj꞉aoc2018-2꞉> 
-("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
-clj꞉aoc2018-2꞉> 
-("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
-clj꞉aoc2018-2꞉> 
-("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
-clj꞉aoc2018-2꞉> 
-({"a" 1, "b" 1, "c" 1, "d" 1, "e" 1, "f" 1}
- {"b" 3, "a" 2, "c" 1}
- {"a" 1, "b" 2, "c" 1, "d" 1, "e" 1}
- {"a" 1, "b" 1, "c" 3, "d" 1}
- {"a" 2, "b" 1, "c" 1, "d" 2}
- {"a" 1, "b" 1, "c" 1, "d" 1, "e" 2}
- {"a" 3, "b" 3})
-clj꞉aoc2018-2꞉> 
-(0 2 1 1 1 1 1)
-clj꞉aoc2018-2꞉> 
-7
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:52:3).
-; Unable to resolve symbol: map_and_sum_frequency in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:52:3).
-; Unable to resolve symbol: map_and_sum_frequency in this context
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/map_and_sum_frequency
-clj꞉aoc2018-2꞉> 
-; Execution error (ArityException) at aoc2018-2/map-and-sum-frequency (REPL:48).
-; Wrong number of args (0) passed to: clojure.lang.PersistentVector
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-; Jacking in...
-; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
-; nREPL Connection was closed
-; Hooking up nREPL sessions...
-; Connected session: clj
-; TIPS:
-;   - You can edit the contents here. Use it as a REPL if you like.
-;   - `alt+enter` evaluates the current top level form.
-;   - `ctrl+enter` evaluates the current form.
-;   - `alt+up` and `alt+down` traverse up and down the REPL command history
-;      when the cursor is after the last contents at the prompt
-;   - Clojure lines in stack traces are peekable and clickable.
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-; Execution error (ArityException) at aoc2018-2/map-and-sum-frequency (aoc2018_2.clj:48).
-; Wrong number of args (0) passed to: clojure.lang.PersistentVector
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/map_and_sum_frequency
-clj꞉aoc2018-2꞉> 
-7
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-{"a" 2, "b" 2, "c" 3}
-clj꞉aoc2018-2꞉> 
-{"a" 2, "b" 2, "c" 3}
-clj꞉aoc2018-2꞉> 
-{"a" 2, "b" 2, "c" 3}
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/map_and_reduce_sum_frequency
-clj꞉aoc2018-2꞉> 
-7
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-1/get_index_removed_str
-clj꞉aoc2018-1꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:68).
-; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:68).
-; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:68).
-; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-"asifoas"
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-"asdfoas"
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-"sdifoas"
-clj꞉aoc2018-2꞉> 
-"asdifoa"
-clj꞉aoc2018-2꞉> 
-; Execution error (StringIndexOutOfBoundsException) at java.lang.String/checkBoundsBeginEnd (String.java:4604).
-; begin 9, end 8, length 8
-clj꞉aoc2018-2꞉> 
-"asdifoa"
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:72:42).
-; Unable to resolve symbol: text_list in this context
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-["abcde" 1]
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:72).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-abcde 1
-fghij 1
-klmno 1
-pqrst 1
-fguij 1
-axcye 1
-wvxyz 1
-nil
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:68).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-"asdifoa"
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:68).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:69).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:69).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:69).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:56:21).
-; Unable to resolve symbol: --> in this context
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:56:21).
-; Unable to resolve symbol: --> in this context
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Syntax error compiling at (src/aoc2018_2.clj:55:21).
-; Unable to resolve symbol: --> in this context
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/sum_two_and_three_frequency
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (REPL:43).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/sum_two_and_three_frequency
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/sum_two_and_three_frequency
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (REPL:43).
-; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (aoc2018_2.clj:43).
-; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/sum_two_and_three_frequency
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/sum_two_and_three_frequency
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (REPL:43).
-; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/count_frequencies
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/check_frequency_existence
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/read_file_as_list_part1
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (REPL:43).
-; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-; Jacking in...
-; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
-; nREPL Connection was closed
-; Hooking up nREPL sessions...
-; Connected session: clj
-; TIPS:
-;   - You can edit the contents here. Use it as a REPL if you like.
-;   - `alt+enter` evaluates the current top level form.
-;   - `ctrl+enter` evaluates the current form.
-;   - `alt+up` and `alt+down` traverse up and down the REPL command history
-;      when the cursor is after the last contents at the prompt
-;   - Clojure lines in stack traces are peekable and clickable.
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Evaluating file: aoc2018_2.clj
-nil
-clj꞉aoc2018-2꞉> 
-  (sum_two_and_three_frequency (count_frequencies (get (read_file_as_list_part1) 0)))
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (aoc2018_2.clj:43).
-; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-{"a" 2, "b" 2, "c" 3}
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/sum-two-and-three-frequency (aoc2018_2.clj:43).
-; class clojure.lang.PersistentList cannot be cast to class clojure.lang.IFn (clojure.lang.PersistentList and clojure.lang.IFn are in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/sum_two_and_three_frequency
-clj꞉aoc2018-2꞉> 
-(0 0)
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-; Execution error (IllegalArgumentException) at aoc2018-2/part1-solution (REPL:59).
-; Don't know how to create ISeq from: aoc2018_2$read_file_as_list_part1
-clj꞉aoc2018-2꞉> 
-; Execution error (IllegalArgumentException) at aoc2018-2/part1-solution (REPL:59).
-; Don't know how to create ISeq from: aoc2018_2$read_file_as_list_part1
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (IllegalArgumentException) at aoc2018-2/part1-solution (REPL:59).
-; Don't know how to create ISeq from: aoc2018_2$read_file_as_list_part1
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-; Execution error (IllegalArgumentException) at aoc2018-2/part1-solution (REPL:59).
-; Don't know how to create ISeq from: aoc2018_2$read_file_as_list_part1
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (UnsupportedOperationException) at aoc2018-2/part1-solution$fn (REPL:59).
-; nth not supported on this type: aoc2018_2$part1_solution$fn__7979$fn__7980
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-(#function[aoc2018-2/part1-solution/fn--7986/fn--7987]
- #function[aoc2018-2/part1-solution/fn--7986/fn--7987]
- #function[aoc2018-2/part1-solution/fn--7986/fn--7987]
- #function[aoc2018-2/part1-solution/fn--7986/fn--7987]
- #function[aoc2018-2/part1-solution/fn--7986/fn--7987]
- #function[aoc2018-2/part1-solution/fn--7986/fn--7987]
- #function[aoc2018-2/part1-solution/fn--7986/fn--7987])
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-(#function[aoc2018-2/part1-solution/fn--7993/fn--7994]
- #function[aoc2018-2/part1-solution/fn--7993/fn--7994]
- #function[aoc2018-2/part1-solution/fn--7993/fn--7994]
- #function[aoc2018-2/part1-solution/fn--7993/fn--7994]
- #function[aoc2018-2/part1-solution/fn--7993/fn--7994]
- #function[aoc2018-2/part1-solution/fn--7993/fn--7994]
- #function[aoc2018-2/part1-solution/fn--7993/fn--7994])
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-(#function[aoc2018-2/part1-solution/fn--8000/fn--8001]
- #function[aoc2018-2/part1-solution/fn--8000/fn--8001]
- #function[aoc2018-2/part1-solution/fn--8000/fn--8001]
- #function[aoc2018-2/part1-solution/fn--8000/fn--8001]
- #function[aoc2018-2/part1-solution/fn--8000/fn--8001]
- #function[aoc2018-2/part1-solution/fn--8000/fn--8001]
- #function[aoc2018-2/part1-solution/fn--8000/fn--8001])
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-({"a" 1, "b" 1, "c" 1, "d" 1, "e" 1, "f" 1}
- {"b" 3, "a" 2, "c" 1}
- {"a" 1, "b" 2, "c" 1, "d" 1, "e" 1}
- {"a" 1, "b" 1, "c" 3, "d" 1}
- {"a" 2, "b" 1, "c" 1, "d" 2}
- {"a" 1, "b" 1, "c" 1, "d" 1, "e" 2}
- {"a" 3, "b" 3})
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
-; Wrong number of args (6) passed to: aoc2018-2/part1-solution/fn--8012/fn--8013
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-((0 0) (1 1) (1 0) (0 1) (1 0) (1 0) (0 1))
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-; Syntax error macroexpanding clojure.core/let at (src/aoc2018_2.clj:57:13).
-; (list (+ prev_two new_two) (+ prev_three new_three)) - failed: simple-symbol? at: [:bindings :form :local-symbol] spec: :clojure.core.specs.alpha/local-name
-(list (+ prev_two new_two) (+ prev_three new_three)) - failed: vector? at: [:bindings :form :seq-destructure] spec: :clojure.core.specs.alpha/seq-binding-form
-(list (+ prev_two new_two) (+ prev_three new_three)) - failed: map? at: [:bindings :form :map-destructure] spec: :clojure.core.specs.alpha/map-bindings
-(list (+ prev_two new_two) (+ prev_three new_three)) - failed: map? at: [:bindings :form :map-destructure] spec: :clojure.core.specs.alpha/map-special-binding
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-[4 3]
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-12
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-12
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (aoc2018_2.clj:79).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:64).
-; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/get_index_removed_str
-clj꞉aoc2018-2꞉> 
-"asdfoas"
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/read_file_as_list
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part1_solution
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/read_file_as_list
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-("bcdef" "ababc" "bbcde" "bcccd" "abcdd" "bcdee" "babab")
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (aoc2018_2.clj:82).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-bcdef 1
-ababc 1
-bbcde 1
-bcccd 1
-abcdd 1
-bcdee 1
-babab 1
-()
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
+; Execution error (NullPointerException) at aoc2018-2/f (REPL:97).
+; Cannot invoke "clojure.lang.IFn.invoke()" because "result" is null
 clj꞉aoc2018-2꞉> 
 nil
 clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
 nil
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-nil
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-nil
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Execution error (ArityException) at aoc2018-2/find-duplicate-item-in-list (REPL:67).
-; Wrong number of args (0) passed to: clojure.lang.PersistentArrayMap
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-{"abdef" 1, "baabc" 1, "abcde" 1, "abccd" 1, "aacdd" 1, "abdee" 1, "abbab" 1}
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-{"acdef" 1, "bbabc" 1, "abcde" 1, "acccd" 1, "abcdd" 1, "acdee" 1, "aabab" 1}
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-{"bcde" 1, "ghij" 1, "lmno" 1, "qrst" 1, "guij" 1, "xcye" 1, "vxyz" 1}
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-{"abde" 1, "fgij" 2, "klno" 1, "pqst" 1, "axye" 1, "wvyz" 1}
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
-; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-(["abde" 1] ["fgij" 2] ["klno" 1] ["pqst" 1] ["axye" 1] ["wvyz" 1])
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-(["fgij" 2])
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-["fgij" 2]
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
-clj꞉aoc2018-2꞉> 
-["fgij" 2]
-clj꞉aoc2018-2꞉> 
-#'aoc2018-2/find_duplicate_item_in_list
 clj꞉aoc2018-2꞉> 
 "fgij"
 clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
+#'aoc2018-2/f
 clj꞉aoc2018-2꞉> 
-nil
+"fgij"
 clj꞉aoc2018-2꞉> 
 ; Running tests for aoc2018-2...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
+#'aoc2018-2/f
 clj꞉aoc2018-2꞉> 
 "fgij"
 clj꞉aoc2018-2꞉> 
-"asdfoas"
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-2꞉> 
-"abcd"
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+(\3 \4 \5)
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/eval7953 (REPL:111).
+; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:111:3).
+; Unable to resolve symbol: drop-nth in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:98:20).
+; Unable to resolve symbol: get-index-removed-list in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: aoc2018_2.clj
+nil
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2-solution
 clj꞉aoc2018-2꞉> 
 "fgij"
 clj꞉aoc2018-2꞉> 
@@ -1126,13 +229,15 @@ clj꞉aoc2018-2꞉> 
 ; Running tests for aoc2018-2...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-2꞉> 
-#'aoc2018-2/part2_solution
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2-solution
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/get-index-removed-list
 clj꞉aoc2018-2꞉> 
 "fgij"
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
-clj꞉aoc2018-2꞉> 
-; Running tests for aoc2018-2...
-; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-2꞉> 
