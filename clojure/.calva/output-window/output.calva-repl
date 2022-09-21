@@ -935,3 +935,204 @@ clj꞉aoc2018-2꞉> 
 ; Running tests for aoc2018-2...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (aoc2018_2.clj:79).
+; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/get_index_removed_str
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/get-index-removed-str (REPL:64).
+; class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/get_index_removed_str
+clj꞉aoc2018-2꞉> 
+"asdfoas"
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/read_file_as_list
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part1_solution
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/read_file_as_list
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+("bcdef" "ababc" "bbcde" "bcccd" "abcdd" "bcdee" "babab")
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (aoc2018_2.clj:82).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+bcdef 1
+ababc 1
+bbcde 1
+bcccd 1
+abcdd 1
+bcdee 1
+babab 1
+()
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+nil
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+nil
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+nil
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+nil
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Execution error (ArityException) at aoc2018-2/find-duplicate-item-in-list (REPL:67).
+; Wrong number of args (0) passed to: clojure.lang.PersistentArrayMap
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+{"abdef" 1, "baabc" 1, "abcde" 1, "abccd" 1, "aacdd" 1, "abdee" 1, "abbab" 1}
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+{"acdef" 1, "bbabc" 1, "abcde" 1, "acccd" 1, "abcdd" 1, "acdee" 1, "aabab" 1}
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+{"bcde" 1, "ghij" 1, "lmno" 1, "qrst" 1, "guij" 1, "xcye" 1, "vxyz" 1}
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+{"abde" 1, "fgij" 2, "klno" 1, "pqst" 1, "axye" 1, "wvyz" 1}
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (REPL:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ClassCastException) at aoc2018-2/find-duplicate-item-in-list$fn (NO_SOURCE_FILE:67).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+(["abde" 1] ["fgij" 2] ["klno" 1] ["pqst" 1] ["axye" 1] ["wvyz" 1])
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+(["fgij" 2])
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+["fgij" 2]
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+["fgij" 2]
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/find_duplicate_item_in_list
+clj꞉aoc2018-2꞉> 
+"fgij"
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+nil
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+"fgij"
+clj꞉aoc2018-2꞉> 
+"asdfoas"
+clj꞉aoc2018-2꞉> 
+"abcd"
+clj꞉aoc2018-2꞉> 
+"fgij"
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/part2_solution
+clj꞉aoc2018-2꞉> 
+"fgij"
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 

@@ -18,8 +18,8 @@
 ;; 답 : 4 * 3 = 12
 
 ;; 파일을 라인별로 분리된 리스트로 리턴해주는 함수입니다.
-(defn read_file_as_list_part1 []
-  (clojure.string/split (slurp "resources/aoc2018_2_1.txt") #"\n"))
+(defn read_file_as_list [input_src]
+  (clojure.string/split (slurp input_src) #"\n"))
 
 ;; 입력 String에 대해서 각 문자들이 몇번씩 나타났는지 Frequency Map을 리턴해주는 함수입니다.
 ;; ex> (count_frequencies "aabbccc") => {"a" 2, "b" 2, "c" 3}
@@ -35,7 +35,7 @@
   (if (some (fn [[_, value]] (= value frequency)) frequency_map) 1 0))
   
 (defn part1_solution []
-  (->> (read_file_as_list_part1)
+  (->> (read_file_as_list "resources/aoc2018_2_1.txt")
     (map count_frequencies)
     (map (fn [frequency_map] [(check_frequency_existence frequency_map 2) (check_frequency_existence frequency_map 3)]))
     (reduce (fn [[prev_two prev_three], [new_two new_three]] [(+ prev_two new_two) (+ prev_three new_three)]))
@@ -60,23 +60,40 @@
 ;; 주어진 예시에서 fguij와 fghij는 같은 위치 (2번째 인덱스)에 정확히 한 문자 (u와 h)가 다름. 따라서 같은 부분인 fgij를 리턴하면 됨.
 
 ;; 특정 인덱스에 있는 값을 제거한 string을 리턴하는 함수입니다.
-(defn get_index_removed_str [text index]
+;; ex> (get_index_removed_str "0123456" 2) => "013456"
+(defn get_index_removed_str [index text]
   (str (subs text 0 index) (subs text (+ index 1))))
 
+;; text_list에서 한개 이상 있는 문자를 찾아서 리턴하는 함수입니다.
+;; ex> (find_duplicate_item_in_list ["a" "b" "a" "c"]) => "a"
 (defn find_duplicate_item_in_list [text_list]
-  (first (filter (fn [[id freq]] (println id freq (freq > 1)) ) (frequencies text_list))))
+  (->> text_list
+       (frequencies)
+       (filter (fn [[_ freq]] (> freq 1)))
+       (first)
+       (first)
+       ))
+
+(defn part2_solution []
+  (let [
+        input_list (read_file_as_list "resources/aoc2018_2_2.txt") ;; input 파일
+        text_length (count (first input_list)) ;; input 파일의 첫번째 라인의 글자수
+      ] 
+    (->> (range text_length) 
+      (map (fn [index] ;; 텍스트 길이만큼 iterate
+         (->> input_list ;; input들을 돌면서 특정 index를 제거한 후 겹치는 문자가 있는지 확인하는 로직
+            (map (partial get_index_removed_str index))
+            (find_duplicate_item_in_list))))
+      (filter some?) ;; 겹치는 문자가 있었다면
+      (first) ;; 제일 먼저 겹치는 문자를 리턴한다
+    )))
 
 
 (comment
   (+ 1 1)
   (part1_solution)
+  (part2_solution)
   ((partial get_index_removed_str 3) "asdifoas")
   (find_duplicate_item_in_list (map (partial get_index_removed_str 3) ["abcde" "fghij" "klmno" "pqrst" "fguij" "axcye" "wvxyz"]))
   (count_frequencies "aabbccc")
-  (check_frequency_existence (count_frequencies (get (read_file_as_list_part1) 1)) 3)
-  (check_frequency_existence (count_frequencies (get (read_file_as_list_part1) 1)) 2)
-  (map (fn [line] line) (read_file_as_list_part1))
-  (map (fn [line] (count_frequencies line)) (read_file_as_list_part1))
-  (into [] (count_frequencies (get (read_file_as_list_part1) 1)))
-  (read_file_as_list_part1)
-  (count_frequencies (get (read_file_as_list_part1) 1)))
+)
