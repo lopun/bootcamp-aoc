@@ -312,3 +312,288 @@ clj꞉aoc2018-1꞉> 
 ; Running tests for aoc2018-1...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018-1꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:15).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Evaluating file: aoc2018_2.clj
+; WARNING: count already refers to: #'clojure.core/count in namespace: aoc2018-2, being replaced by: #'aoc2018-2/count
+nil
+clj꞉aoc2018-2꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:41:5).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+2
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:42:3).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Evaluating file: aoc2018_2.clj
+; WARNING: count already refers to: #'clojure.core/count in namespace: aoc2018-2, being replaced by: #'aoc2018-2/count
+nil
+clj꞉aoc2018-2꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+(read_file_as_list)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:403:1).
+; Unable to resolve symbol: read_file_as_list in this context
+clj꞉user꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Evaluating file: aoc2018_2.clj
+; WARNING: count already refers to: #'clojure.core/count in namespace: aoc2018-2, being replaced by: #'aoc2018-2/count
+nil
+clj꞉aoc2018-2꞉> 
+(read_file_as_list)
+["abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab"]
+clj꞉aoc2018-2꞉> 
+["abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab"]
+clj꞉aoc2018-2꞉> 
+{"a" ["a"], "b" ["b"], "c" ["c"], "d" ["d"], "e" ["e"], "f" ["f"]}
+clj꞉aoc2018-2꞉> 
+{"b" ["b" "b" "b"], "a" ["a" "a"], "c" ["c"]}
+clj꞉aoc2018-2꞉> 
+{"b" ["b" "b" "b"], "a" ["a" "a"], "c" ["c"]}
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/count
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
+; Wrong number of args (0) passed to: clojure.lang.MapEntry
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Error printing return value (ArityException) at clojure.lang.AFn/throwArity (AFn.java:429).
+; Wrong number of args (0) passed to: clojure.lang.MapEntry
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/count
+clj꞉aoc2018-2꞉> 
+{"b" 3, "a" 2, "c" 1}
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:46:17).
+; Unable to resolve symbol: count_frequencies in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:46:17).
+; Unable to resolve symbol: count_frequencies in this context
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Evaluating file: aoc2018_2.clj
+nil
+clj꞉aoc2018-2꞉> 
+  (doseq [[k x] (count_frequencies (get (read_file_as_list) 1))] (println k ":" x))
+b : 3
+a : 2
+c : 1
+nil
+clj꞉aoc2018-2꞉> 
+b : 3
+a : 2
+c : 1
+nil
+clj꞉aoc2018-2꞉> 
+b : 3
+a : 2
+c : 1
+nil
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/eval7974 (REPL:46).
+; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Execution error (ClassCastException) at aoc2018-2/eval7988 (REPL:46).
+; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+clj꞉aoc2018-2꞉> 
+[["b" 3] ["a" 2] ["c" 1]]
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/check_duplicates_and_count
+clj꞉aoc2018-2꞉> 
+[b 3]
+(nil[a 2]
+ nil[c 1]
+ nil)
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
+clj꞉aoc2018-2꞉> 
+; Error printing return value (IllegalArgumentException) at clojure.lang.RT/seqFrom (RT.java:557).
+; Don't know how to create ISeq from: aoc2018_2$read_file_as_list
+clj꞉aoc2018-2꞉> 
+("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
+clj꞉aoc2018-2꞉> 
+("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
+clj꞉aoc2018-2꞉> 
+("abcdef" "bababc" "abbcde" "abcccd" "aabcdd" "abcdee" "ababab")
+clj꞉aoc2018-2꞉> 
+({"a" 1, "b" 1, "c" 1, "d" 1, "e" 1, "f" 1}
+ {"b" 3, "a" 2, "c" 1}
+ {"a" 1, "b" 2, "c" 1, "d" 1, "e" 1}
+ {"a" 1, "b" 1, "c" 3, "d" 1}
+ {"a" 2, "b" 1, "c" 1, "d" 2}
+ {"a" 1, "b" 1, "c" 1, "d" 1, "e" 2}
+ {"a" 3, "b" 3})
+clj꞉aoc2018-2꞉> 
+(0 2 1 1 1 1 1)
+clj꞉aoc2018-2꞉> 
+7
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:52:3).
+; Unable to resolve symbol: map_and_sum_frequency in this context
+clj꞉aoc2018-2꞉> 
+; Syntax error compiling at (src/aoc2018_2.clj:52:3).
+; Unable to resolve symbol: map_and_sum_frequency in this context
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/map_and_sum_frequency
+clj꞉aoc2018-2꞉> 
+; Execution error (ArityException) at aoc2018-2/map-and-sum-frequency (REPL:48).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Evaluating file: aoc2018_2.clj
+nil
+clj꞉aoc2018-2꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: aoc2018_2.clj
+nil
+clj꞉aoc2018-2꞉> 
+; Execution error (ArityException) at aoc2018-2/map-and-sum-frequency (aoc2018_2.clj:48).
+; Wrong number of args (0) passed to: clojure.lang.PersistentVector
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/map_and_sum_frequency
+clj꞉aoc2018-2꞉> 
+7
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+{"a" 2, "b" 2, "c" 3}
+clj꞉aoc2018-2꞉> 
+{"a" 2, "b" 2, "c" 3}
+clj꞉aoc2018-2꞉> 
+{"a" 2, "b" 2, "c" 3}
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Evaluating file: aoc2018_2.clj
+nil
+clj꞉aoc2018-2꞉> 
+#'aoc2018-2/map_and_reduce_sum_frequency
+clj꞉aoc2018-2꞉> 
+7
+clj꞉aoc2018-2꞉> 
