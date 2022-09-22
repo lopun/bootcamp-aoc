@@ -26,8 +26,7 @@
 ;; ex> (count-frequencies "aabbccc") => {"a" 2, "b" 2, "c" 3}
 (defn count-frequencies [str]
   (frequencies (string/split str #"")))
-(comment
- (frequencies "aabbccc"))
+
 ;; count-ferquencies 함수에서 받은 FrequencyMap에서 frequency가 존재하는지를 확인해주는 함수입니다.
 ;; 추후에 이 값들을 합쳐야 하는 요구사항이 있기 때문에 편의성을 위해서 true/false가 아닌 1/0을 리턴하도록 함수를 구성했습니다.
 ;; ex> (check-frequency-existence {"a" 2, "b" 2, "c" 3} 1) => 0

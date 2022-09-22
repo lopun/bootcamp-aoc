@@ -1,5 +1,10 @@
-(ns aoc2018_3)
+(ns aoc2018_3
+  (:require [clojure.set :as set])
+  (:require [clojure.string :as string])
+  (:require [clojure.math.combinatorics :as combo]))
 
+(defn read-file-as-list "파일을 라인별로 분리된 리스트로 리턴해주는 함수입니다." [input-src]
+  (clojure.string/split (slurp input-src) #"\n"))
 
 ;; 파트 1
 ;; 다음과 같은 입력이 주어짐.
@@ -23,6 +28,40 @@
 ;; 여기서 XX는 ID 1, 2, 3의 영역이 두번 이상 겹치는 지역.
 ;; 겹치는 지역의 갯수를 출력하시오. (위의 예시에서는 4)
 
+(defn get-cartesian-product [{id :id x :x y :y width :width height :height}]
+  {:id id
+    :cart (combo/cartesian-product (into [] (range x (+ x width))) (into [] (range y (+ y height))))})
+
+(defn parse-and-get-coordinate [line]
+  (let [id (Integer/parseInt (get (string/split (get (string/split line #"#") 1) #" @ ") 0))
+        x (Integer/parseInt (get (string/split (get (string/split line #" @ ") 1) #",") 0))
+        y (Integer/parseInt (get (string/split (get (string/split line #",") 1) #": ") 0))
+        width (Integer/parseInt (get (string/split (get (string/split line #": ") 1) #"x") 0))
+        height (Integer/parseInt (get (string/split line #"x") 1))]
+    {:id id :x x :y y :width width :height height}))
+    
+(defn cartesian-product-intersection [[{id1 :id cart1 :cart} {id2 :id cart2 :cart}]]
+  {:id1 id1 :id2 id2 :cart-intersection (set/intersection (into #{} cart1) (into #{} cart2))})
+
+(defn part1-solution []
+  (->> (read-file-as-list "resources/aoc2018_3_1.txt")
+       (map parse-and-get-coordinate)
+       (map get-cartesian-product)
+       (#(combo/combinations % 2))
+       (map cartesian-product-intersection)
+       (map #(get % :cart-intersection))
+       (reduce set/union)
+       (count)))
+
+
+(comment
+  (into #{} [1 2 3])
+  (into [] (range 1 4))
+  (get-cartesian-product {:x 1 :y 3 :width 4 :height 4})
+  (parse-and-get-coordinate "#100 @ 1,3: 4x4")
+  (part1-solution)
+  (combo/permutations [1 1 2])
+  (set/intersection (into #{} [{:x 1 :y 2} {:x 1 :y 3}]) (into #{} [{:x 1 :y 2} {:x 2 :y 4}])))
 
 
 
