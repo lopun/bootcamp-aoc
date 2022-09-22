@@ -1,4 +1,5 @@
 .idea/
 clojure/clojure.iml
-.calva/
-.cpcache
+clojure/.calva/
+clojure/.cpcache
+.clj-kondo
