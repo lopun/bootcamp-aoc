@@ -1,2 +1,4 @@
 .idea/
 clojure/clojure.iml
+.calva/
+.cpcache
