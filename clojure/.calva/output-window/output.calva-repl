@@ -5687,3 +5687,219 @@ clj꞉aoc2018_3꞉> 
 ; Running tests for aoc2018_3...
 ; No tests found. 😱, ns: 0, vars: 0
 clj꞉aoc2018_3꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: aoc2018_1.clj
+nil
+clj꞉aoc2018-1꞉> 
+; Evaluating file: aoc2018_1.clj
+nil
+clj꞉aoc2018-1꞉> 
+10
+clj꞉aoc2018-1꞉> 
+; Running tests for aoc2018-1...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-1꞉> 
+439
+clj꞉aoc2018-1꞉> 
+; Execution error (NullPointerException) at aoc2018-1/find-earliest-2nd-occurrence-sum-value (aoc2018_1.clj:50).
+; Cannot invoke "Object.getClass()" because "x" is null
+clj꞉aoc2018-1꞉> 
+; Running tests for aoc2018-1...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-1꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018-2...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018-2꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+; Syntax error macroexpanding clojure.core/ns at (src/aoc2018_3.clj:1:1).
+; ((:require [clojure.set :as set clojure.string :as string clojure.math.combinatorics :as combo])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+; Evaluation of file aoc2018_3.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc2018_3꞉> 
+; Syntax error compiling at (src/aoc2018_3.clj:148:3).
+; Unable to resolve symbol: part1-solution in this context
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+; Syntax error macroexpanding clojure.core/ns at (src/aoc2018_3.clj:1:1).
+; ((:require [clojure.set :as set clojure.string :as string clojure.math.combinatorics :as combo])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+; Evaluation of file aoc2018_3.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+; Syntax error macroexpanding clojure.core/ns at (src/aoc2018_3.clj:1:1).
+; ((:require [clojure.set :as set clojure.string :as string clojure.math.combinatorics :as combo])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+; Evaluation of file aoc2018_3.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+nil
+clj꞉aoc2018_3꞉> 
+4
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+#'aoc2018_3/part1-solution
+clj꞉aoc2018_3꞉> 
+{(4 3) #{1 2}, (2 3) #{1}, (2 5) #{1}, (3 3) #{1 2}, (5 4) #{2}, (6 3) #{2}, (3 4) #{1 2}, (4 2) #{2}, (6 6) #{3}, (5 3) #{2}, (6 5) #{3}, (4 1) #{2}, (5 2) #{2}, (4 6) #{1}, (1 4) #{1}, (1 3) #{1}, (1 5) #{1}, (6 4) #{2}, (5 1) #{2}, (6 1) #{2}, (5 6) #{3}, (5 5) #{3}, (2 4) #{1}, (3 6) #{1}, (4 5) #{1}, (3 1) #{2}, (1 6) #{1}, (4 4) #{1 2}, (2 6) #{1}, (6 2) #{2}, (3 5) #{1}, (3 2) #{2}}
+0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+#'aoc2018_3/part1-solution
+clj꞉aoc2018_3꞉> 
+; Execution error (IllegalArgumentException) at aoc2018-3/part1-solution (REPL:106).
+; Don't know how to create ISeq from: aoc2018_3$part1_solution$fn__8687
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+#'aoc2018_3/part1-solution
+clj꞉aoc2018_3꞉> 
+({:id 1, :cart ((1 3) (1 4) (1 5) (1 6) (2 3) (2 4) (2 5) (2 6) (3 3) (3 4) (3 5) (3 6) (4 3) (4 4) (4 5) (4 6))} {:id 2, :cart ((3 1) (3 2) (3 3) (3 4) (4 1) (4 2) (4 3) (4 4) (5 1) (5 2) (5 3) (5 4) (6 1) (6 2) (6 3) (6 4))} {:id 3, :cart ((5 5) (5 6) (6 5) (6 6))}) {(4 3) #{1 2}, (2 3) #{1}, (2 5) #{1}, (3 3) #{1 2}, (5 4) #{2}, (6 3) #{2}, (3 4) #{1 2}, (4 2) #{2}, (6 6) #{3}, (5 3) #{2}, (6 5) #{3}, (4 1) #{2}, (5 2) #{2}, (4 6) #{1}, (1 4) #{1}, (1 3) #{1}, (1 5) #{1}, (6 4) #{2}, (5 1) #{2}, (6 1) #{2}, (5 6) #{3}, (5 5) #{3}, (2 4) #{1}, (3 6) #{1}, (4 5) #{1}, (3 1) #{2}, (1 6) #{1}, (4 4) #{1 2}, (2 6) #{1}, (6 2) #{2}, (3 5) #{1}, (3 2) #{2}}
+0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Syntax error compiling at (src/aoc2018_3.clj:113:10).
+; Unable to resolve symbol: merge-coordinate-id-set in this context
+clj꞉aoc2018_3꞉> 
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; nREPL Connection was closed
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: aoc2018_3.clj
+; Syntax error macroexpanding clojure.core/ns at (src/aoc2018_3.clj:1:1).
+; ((:require [clojure.set :as set clojure.string :as string clojure.math.combinatorics :as combo])) - failed: Extra input spec: :clojure.core.specs.alpha/ns-form
+; Evaluation of file aoc2018_3.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Syntax error compiling at (src/aoc2018_3.clj:155:3).
+; Unable to resolve symbol: part1-solution in this context
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+nil
+clj꞉aoc2018_3꞉> 
+#'aoc2018_3/part1-solution
+clj꞉aoc2018_3꞉> 
+4
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+nil
+clj꞉aoc2018_3꞉> 
+4
+clj꞉aoc2018_3꞉> 
+; Execution error (ClassCastException) at aoc2018-3/part2-solution (aoc2018_3.clj:130).
+; class clojure.lang.PersistentArrayMap cannot be cast to class java.util.Map$Entry (clojure.lang.PersistentArrayMap is in unnamed module of loader 'app'; java.util.Map$Entry is in module java.base of loader 'bootstrap')
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Evaluating file: aoc2018_3.clj
+nil
+clj꞉aoc2018_3꞉> 
+4
+clj꞉aoc2018_3꞉> 
+#{3}
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
+; Running tests for aoc2018_3...
+; No tests found. 😱, ns: 0, vars: 0
+clj꞉aoc2018_3꞉> 
