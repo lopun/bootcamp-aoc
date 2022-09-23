@@ -31,52 +31,26 @@
   (map #(Integer/parseInt %) str-list))
 
 (defn part1-solution []
-   (reduce + (convert-str-list-to-int-list (read-file-as-list  "resources/aoc2018_1_1.txt"))))
-
-;; (defn part2-solution []
-;;   (let [
-;;         input-list (read-file-as-list)
-;;         input-count (count input-list)
-;;       ] 
-;;       (->> (range (- input-count 1)) 
-;;         (map (fn [index]
-;;           (reduce + (convert-str-list-to-int-list (take (+ index 1) input-list)))))
-;;            )))
+  (->> (read-file-as-list  "resources/aoc2018_1_1.txt")
+       convert-str-list-to-int-list
+       (reduce +)))
 
 (defn find-earliest-2nd-occurrence-sum-value [input-list]
   (loop [current-input-list input-list
          sum-value 0
          sum-occurrence-map {}]
     (let [new-sum-value (+ (first current-input-list) sum-value)]
-      (if (or (get sum-occurrence-map new-sum-value) (= (count current-input-list) 0))
-        new-sum-value
-        (recur (rest current-input-list) new-sum-value (assoc sum-occurrence-map new-sum-value true))))))
+      (cond (get sum-occurrence-map new-sum-value) new-sum-value
+            (= (count current-input-list) 1) (recur input-list new-sum-value (assoc sum-occurrence-map new-sum-value true))
+            :else (recur (rest current-input-list) new-sum-value (assoc sum-occurrence-map new-sum-value true))))))
 
 (defn part2-solution []
   (->> (read-file-as-list "resources/aoc2018_1_2.txt")
        (map #(Integer/parseInt %))
        (find-earliest-2nd-occurrence-sum-value)))
 
-
-(comment 
-    (+ 1 1)
-    (read-file-as-list  "resources/aoc2018_1_2.txt")
-    (part2-solution)
-    (assoc {} :key "value"))
-  
-
-;; (defn f [y]
-;; (let [a (g x)] 
-;;    ... )
-;;  const a = g(x);
-
-;;  (h a)
-;;  ()
-;;  ()
-;;  ()) <-- return
-;; 1. ["+1" "+1" "-1" ...] (O)
-;; 2. [1 1 -1 100 -5 ...]
-;; 3. ... sum
-
-
-;; PPAP : Parse Process Aggregate Print
+(comment
+  (+ 1 1)
+  (read-file-as-list  "resources/aoc2018_1_2.txt")
+  (part2-solution)
+  (assoc {} :key "value"))
