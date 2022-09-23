@@ -61,7 +61,7 @@
         type (cond (string/starts-with? (last (string/split line #"] ")) "Guard") :guard
                    (string/starts-with? (last (string/split line #"] ")) "falls") :start
                    (string/starts-with? (last (string/split line #"] ")) "wakes") :end)
-        id (if (= type :guard) (first (string/split (last (string/split line #"\#")) #" begins shift")))]
+        id (if (= type :guard) (Integer/parseInt (first (string/split (last (string/split line #"\#")) #" begins shift"))))]
     {:minute minute :type type :id id}))
 
 (defn track-sleep-for-each-guard
@@ -79,18 +79,43 @@
        (map #(range (first %) (last %)))
        flatten))
 
-(defn group-by-guard-and-collect-info
+(defn get-sleep-detail-info
+  [[id sleep-info-group]]
+  (let [sleep-minutes (get-sleep-minutes sleep-info-group)]
+    {:id id
+     :total-sleep-time (count sleep-minutes)
+     :frequently-sleep-minute (->> sleep-minutes
+                                   frequencies
+                                   (sort-by val)
+                                   last
+                                   first)}))
+
+(defn group-by-guard-and-get-sleep-detail-info
   [sleep-for-each-guard]
   (->> sleep-for-each-guard
        (group-by :id)
-       (map (fn [[id sleep-info-group]] {:id id :sleep-minutes (get-sleep-minutes sleep-info-group)}))))
+       (map get-sleep-detail-info)))
+
+(defn get-frequently-sleep-guard-and-get-value
+  [sleep-detail-info-for-each-guard]
+  (->> sleep-detail-info-for-each-guard
+       (sort-by :total-sleep-time)
+       last
+       (#(* (get % :frequently-sleep-minute) (get % :id)))))
 
 (defn part1-solution
   []
   (->> (read-file-as-list "resources/aoc2018_4.txt")
        (map parse-and-get-sleep-info)
        (reduce track-sleep-for-each-guard [])
-       group-by-guard-and-collect-info))
+       group-by-guard-and-get-sleep-detail-info
+       get-frequently-sleep-guard-and-get-value))
+
+(defn part2-solution
+  []
+  (->> (read-file-as-list "resources/aoc2018_4.txt")
+       (map parse-and-get-sleep-info)
+       (reduce track-sleep-for-each-guard [])))
 
 (comment
   (read-file-as-list "resources/aoc2018_4.txt")
@@ -107,4 +132,5 @@
   (partition 2 [1 2 3 4 5 6])
   (range 0 1)
   (part1-solution)
-  )
+  (into [] (frequencies [1 2 3 4 5 1]))
+  (last (last (sort-by val (frequencies [1 2 3 4 5 1])))))
