@@ -106,7 +106,8 @@
        vals
        (filter #(> (count %) 1))
        (reduce set/union)
-       (set/difference (get-id-list))))
+       (set/difference (get-id-list))
+       first))
 
 (comment
   (into #{} [1 2 3])
@@ -115,6 +116,12 @@
   (parse-and-get-claim-info "#100 @ 1,3: 4x4")
   (part1-solution)
   (part2-solution)
+  (get-cart-list)
+  (get-coordinate-id-set (first (get-cart-list)))
+  ( ->> (get-cart-list)
+       (map get-coordinate-id-set)
+       flatten)
+  (get-merged-coordinate-id-set)
   (let [some-map {}]
     (assoc some-map :a 1)
     (assoc some-map :b 1))
