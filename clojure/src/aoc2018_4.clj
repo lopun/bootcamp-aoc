@@ -218,7 +218,9 @@
   output: 4455
   "
   [sleep-summary]
-  (* (:minute (:frequently-sleep-minute-and-times sleep-summary)) (:id sleep-summary)))
+  (let [minute (:minute (:frequently-sleep-minute-and-times sleep-summary))
+        id (:id sleep-summary)]
+    (* minute id)))
 
 (defn part1-solution
   []
