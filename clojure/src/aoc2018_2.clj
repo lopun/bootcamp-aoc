@@ -22,28 +22,35 @@
 (defn read-file-as-list "파일을 라인별로 분리된 리스트로 리턴해주는 함수입니다." [input-src]
   (clojure.string/split (slurp input-src) #"\n"))
 
-;; 입력 String에 대해서 각 문자들이 몇번씩 나타났는지 Frequency Map을 리턴해주는 함수입니다.
-;; ex> (count-frequencies "aabbccc") => {"a" 2, "b" 2, "c" 3}
-(defn count-frequencies [str]
-  (frequencies (string/split str #"")))
-
 ;; count-ferquencies 함수에서 받은 FrequencyMap에서 frequency가 존재하는지를 확인해주는 함수입니다.
 ;; 추후에 이 값들을 합쳐야 하는 요구사항이 있기 때문에 편의성을 위해서 true/false가 아닌 1/0을 리턴하도록 함수를 구성했습니다.
 ;; ex> (check-frequency-existence {"a" 2, "b" 2, "c" 3} 1) => 0
 ;; ex> (check-frequency-existence {"a" 2, "b" 2, "c" 3} 2) => 1
 ;; ex> (check-frequency-existence {"a" 2, "b" 2, "c" 3} 3) => 1
-(defn check-frequency-existence [frequency-map frequency]
-  (if (some (fn [[- value]] (= value frequency)) frequency-map) 1 0))
+(defn check-frequency-existence [frequency frequency-map]
+  (if (some (fn [[_ value]] (= value frequency)) frequency-map) 1 0))
 
 ; vals
 ; 2 3
 ; partial (currying) https://clojuredocs.org/clojure.core/partial
 ;; format
+;; let f x y = ...
+
+;; let g = f x
+
+;; 결국엔... g y
+
+;; (def twice-frequency-existence (partial check-frequency-existence 2))
+;; (def three-times-frequency-existence (partial check-frequency-existence 3))
+
+;; (def double (partial * 2))
+
+
 (defn part1-solution []
   (->> (read-file-as-list "resources/aoc2018_2_1.txt")
        (map frequencies)
        (map (fn [frequency-map] [(check-frequency-existence frequency-map 2) (check-frequency-existence frequency-map 3)]))
-       (reduce (fn [[prev-two prev-three], [new-two new-three]] [(+ prev-two new-two) (+ prev-three new-three)]))
+       (reduce (fn [[prev-two prev-three] [new-two new-three]] [(+ prev-two new-two) (+ prev-three new-three)]))
        (apply *)))
 
 ;; ==================================================================================
@@ -80,5 +87,4 @@
 (comment
   (+ 1 1)
   (part1-solution)
-  (part2-solution)
-  (count-frequencies "aabbccc"))
+  (part2-solution))

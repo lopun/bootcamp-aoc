@@ -2,4 +2,4 @@
 clojure/clojure.iml
 clojure/.calva/
 clojure/.cpcache
-.clj-kondo
+.clj-kondo/
