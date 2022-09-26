@@ -86,7 +86,7 @@
   (->> (read-file-as-list "resources/aoc2018_3.txt")
        (map parse-and-get-claim-info)
        (map #(get % :id))
-       (into #{})))
+       (into #{}))) 
 
 (defn get-merged-coordinate-id-set
   []
@@ -118,12 +118,17 @@
   (part2-solution)
   (get-cart-list)
   (get-coordinate-id-set (first (get-cart-list)))
-  ( ->> (get-cart-list)
+  (->> (get-cart-list)
        (map get-coordinate-id-set)
        flatten)
   (get-merged-coordinate-id-set)
+  (->> (get-cart-list)
+       (mapcat get-coordinate-id-set)
+       (reduce merge-coordinate-id-set {}))
+  (get-cart-list)
   (let [some-map {}]
     (assoc some-map :a 1)
     (assoc some-map :b 1))
   (combo/permutations [1 1 2])
-  (set/intersection (into #{} [{:x 1 :y 2} {:x 1 :y 3}]) (into #{} [{:x 1 :y 2} {:x 2 :y 4}])))
+  (set/intersection (into #{} [{:x 1 :y 2} {:x 1 :y 3}]) (into #{} [{:x 1 :y 2} {:x 2 :y 4}]))
+  )

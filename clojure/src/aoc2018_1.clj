@@ -49,8 +49,9 @@
        (map #(Integer/parseInt %))
        (find-earliest-2nd-occurrence-sum-value)))
 
-(comment
+(comment 
   (+ 1 1)
   (read-file-as-list  "resources/aoc2018_1_2.txt")
   (part2-solution)
-  (assoc {} :key "value"))
+  (assoc {} :key "value")
+  )
