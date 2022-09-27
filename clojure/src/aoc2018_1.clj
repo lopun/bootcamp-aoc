@@ -35,23 +35,42 @@
        convert-str-list-to-int-list
        (reduce +)))
 
-(defn find-earliest-2nd-occurrence-sum-value [input-list]
-  (loop [current-input-list input-list
-         sum-value 0
-         sum-occurrence-map {}]
-    (let [new-sum-value (+ (first current-input-list) sum-value)]
-      (cond (get sum-occurrence-map new-sum-value) new-sum-value
-            (= (count current-input-list) 1) (recur input-list new-sum-value (assoc sum-occurrence-map new-sum-value true))
-            :else (recur (rest current-input-list) new-sum-value (assoc sum-occurrence-map new-sum-value true))))))
+;; (defn find-some
+;;   ([input-seq
+;;     sum-value
+;;     sum-occurrence-map]
+;;    (lazy-seq
+;;     (let [new-sum-value (+ (first input-seq) sum-value)]
+;;       (when-let [exists (not (get sum-occurrence-map new-sum-value))]
+;;         (println new-sum-value exists)
+;;         (if exists new-sum-value
+;;             (find-some (rest input-seq) new-sum-value (assoc sum-occurrence-map new-sum-value true))))))))
 
-(defn part2-solution []
+(defn find-first-duplicate
+  [sum-seq]
+  (->> (distinct sum-seq)
+       (map (fn [original-num distinct-num] (if (not= original-num distinct-num) original-num nil)) sum-seq)
+       (filter #(not= nil %))
+       first))
+
+(defn part2-solution-seq-way []
   (->> (read-file-as-list "resources/aoc2018_1_2.txt")
        (map #(Integer/parseInt %))
-       (find-earliest-2nd-occurrence-sum-value)))
+       cycle
+       (reductions + 0)
+       find-first-duplicate))
 
-(comment 
+(comment
   (+ 1 1)
   (read-file-as-list  "resources/aoc2018_1_2.txt")
-  (part2-solution)
-  (assoc {} :key "value")
-  )
+  (part2-solution-seq-way)
+  (let [input-seq '(1 2 3)]
+    (println (first input-seq))
+    (println (first input-seq)))
+  #_(find-some '(3 3 4 -2 -4 3 3 4 -2 -4) 0 {})
+  #_(find-some '(3 3 4 -2 -4 3 3 4 -2 -4) 0 {})
+  (reductions + 0 (cycle [3 3 4 -2 -4]))
+  (map (fn [a b] ( println a b )) '(1 2 3 4 5) '(6 7 8 9 10))
+  (distinct '(1 2 3 4 5 2 3 4 6 7 3 9))
+  (get {} :a)
+  (assoc {} :key "value"))

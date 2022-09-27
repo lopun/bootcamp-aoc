@@ -33,19 +33,6 @@
   [s]
   (= s (string/upper-case s)))
 
-(defn lower-case?
-  "
-  문자가 소문자인지 확인해주는 함수입니다.
-  ex1)
-  input: A
-  output: false
-  ex2)
-  input: a
-  output: true
-  "
-  [s]
-  (= s (string/lower-case s)))
-
 (defn last-string
   "
   마지막 문자를 가져와주는 함수입니다. Character이 아닌 String 타입으로 가져옵니다.
@@ -64,7 +51,7 @@
   output: abcd
   "
   [str]
-  (.substring (java.lang.String. str) 0 (- (count str) 1)))
+  (subs str 0 (dec (count str))))
 
 (defn can-react?
   "
@@ -88,15 +75,21 @@
   output: dabCBAcaDA
   "
   [polymer]
-  (->> (string/split polymer #"")
-       (reduce (fn [currenty-polymer next-unit]
-                 (if (can-react? currenty-polymer next-unit)
-                   (remove-last currenty-polymer)
-                   (str currenty-polymer next-unit))))))
+  (reduce (fn [currenty-polymer next-unit]
+            (if (can-react? currenty-polymer next-unit)
+              (remove-last currenty-polymer)
+              (str currenty-polymer next-unit))) polymer))
+
+(defn text-to-list
+  [text]
+  (->> text
+       seq
+       (map str)))
 
 (defn part1-solution
   []
   (->> (read-file-as-string "resources/aoc2018_5.txt")
+       text-to-list
        let-polymer-react
        count))
 
@@ -105,7 +98,7 @@
   가능한 모든 unit(a-z)을 리턴하는 함수입니다. 해당 함수에서는 소문자만 리턴합니다.
   ex)
   input:
-  output: (\a \b \c ... \z)
+  output: (a b c ... z)
   "
   []
   (map char (range (int \a) (inc (int \z)))))
@@ -114,23 +107,46 @@
   "
   polymer에서 unit에 해당하는 모든 문자를 제거하는 함수입니다.
   ex)
-  input: \a abcdABCD
+  input: a abcdABCD
   output: bcdBCD
   "
-  [unit polymer]
+  [polymer unit]
   (-> polymer
       (string/replace (string/lower-case unit) "")
       (string/replace (string/upper-case unit) "")))
 
+(defn part2-solution
+  []
+  (let [polymer (read-file-as-string "resources/aoc2018_5.txt")]
+    (->> (get-all-unit)
+         (map (partial remove-unit-from-polymer polymer))
+         (map text-to-list)
+         (map let-polymer-react)
+         (map count)
+         (apply min))))
 
 (comment
   (map identity "abcde")
   (str "a" "b")
   (reduce str "abcde")
   (part1-solution)
+  (part2-solution)
   (remove-last "abc")
   (let-polymer-react  "abcCdDBe")
   (remove-unit-from-polymer \a "abAc")
   (get-all-unit)
+  (->> (seq "abcCdDBe")
+       (map str)
+       (reduce (fn [currenty-polymer next-unit]
+                 (if (can-react? currenty-polymer next-unit)
+                   (remove-last currenty-polymer)
+                   (str currenty-polymer next-unit)))))
   (last "abcde"))
-  
+
+;; day1 part2 다시 풀기
+;; day5 part2 풀기
+;; day6 풀기
+
+;; 추가 과제: thread first와 thread last는 언제 어떻게 쓰는게 좋을까? 혹은... 왜 어떤 구현은 thread first이고 thread last일까?
+;; (map f coll) thread last
+;; (string str ...) thread first
