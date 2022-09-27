@@ -1,4 +1,6 @@
-(ns aoc2018_6)
+(ns aoc2018_6
+  (:require [clojure.string :as string]
+            [clojure.set :as set]))
 
 ;; 파트 1
 ;; 입력 : 좌표의 쌍이 N개 주어짐
@@ -64,3 +66,42 @@
 ;; Total distance: 5 + 6 + 4 + 2 + 3 + 10 = 30
 
 ;; N이 10000 미만인 안전한 지역의 사이즈를 구하시오.
+
+(defn read-file-as-list "파일을 라인별로 분리된 리스트로 리턴해주는 함수입니다." [input-src]
+  (clojure.string/split (slurp input-src) #"\n"))
+
+(defn calculate-manhattan-dist
+  " 절대거리 구해주는 함수입니다. 1 + 3 = 4
+  input: [1 1] [2 4]
+  output: 4
+  "
+  [{x1 :x y1 :y} {x2 :x y2 :y}]
+  (+ (Math/abs (- x1 x2))
+     (Math/abs (- y1 y2))))
+
+(defn get-unique-closest-coordiate-or-nil
+  [asc-sorted-coordinates]
+  (when-not (= (:manhattan-dist (first asc-sorted-coordinates))
+               (:manhattan-dist (second asc-sorted-coordinates)))
+    (:coordinate (first asc-sorted-coordinates))))
+
+(defn sort-by-manhattan-dist-asc
+  [coordinates {:keys [x y]}]
+  (->> coordinates
+       (map (fn [coordinate] {:coordinate coordinate
+                              :manhattan-dist (calculate-manhattan-dist coordinate {:x x :y y})}))
+       (sort-by :manhattan-dist <)))
+
+(defn get-closest-coordinate
+  [coordinates coordinate]
+  (get-unique-closest-coordiate-or-nil
+   (sort-by-manhattan-dist-asc coordinates coordinate)))
+
+
+(defn part1-solution
+  []
+  ())
+
+(comment
+  (get-closest-coordinate [{:x 1 :y 2} {:x 1 :y 3}] {:x 5 :y 5})
+  (calculate-manhattan-dist {:x 1 :y 2} {:x 2 :y 3}))
