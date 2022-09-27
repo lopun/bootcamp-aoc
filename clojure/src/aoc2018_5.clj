@@ -1,4 +1,9 @@
-(ns aoc2018_5)
+(ns aoc2018_5
+  (:require [clojure.string :as string]))
+
+(defn read-file-as-string "파일을 라인별로 분리된 리스트로 리턴해주는 함수입니다." [input-src]
+  (slurp input-src))
+
 ;; 파트 1
 ;; 입력: dabAcCaCBAcCcaDA
 
@@ -14,3 +19,134 @@
 ;; 주어진 문자열에서 한 유닛 (대문자와 소문자)을 전부 없앤 후 반응시켰을 때, 가장 짧은 문자열의 길이를 리턴하시오.
 ;; 예를 들어 dabAcCaCBAcCcaDA 에서 a/A를 없애고 모두 반응시키면 dbCBcD가 되고 길이는 6인데 비해,
 ;; 같은 문자열에서 c/C를 없애고 모두 반응시키면 daDA가 남고 길이가 4이므로 4가 가장 짧은 길이가 됨.
+
+(defn upper-case?
+  "
+  문자가 대문자인지 확인해주는 함수입니다.
+  ex1)
+  input: A
+  output: true
+  ex2)
+  input: a
+  output: false 
+  "
+  [s]
+  (= s (string/upper-case s)))
+
+(defn last-string
+  "
+  마지막 문자를 가져와주는 함수입니다. Character이 아닌 String 타입으로 가져옵니다.
+  ex)
+  input: abcde
+  output: e
+  "
+  [s]
+  (str (last s)))
+
+(defn remove-last
+  "
+  마지막 문자가 제거된 문자열을 리턴하는 함수입니다.
+  ex)
+  input: abcde
+  output: abcd
+  "
+  [str]
+  (subs str 0 (dec (count str))))
+
+(defn can-react?
+  "
+  현재 polymer와 새로 들어온 unit이 반응할 수 있는지를 확인해주는 함수입니다.
+  ex1) d와 D가 반응
+  input: abcd D
+  output: true
+  ex2) d와 E는 반응불가
+  input: abcd E
+  output: false
+  "
+  [currenty-polymer next-unit]
+  (let [compare-operator (if (upper-case? next-unit) string/lower-case string/upper-case)]
+    (= (last-string currenty-polymer) (compare-operator next-unit))))
+
+(defn let-polymer-react
+  "
+  polymer를 반응시키는 함수입니다. 반응할 수 있는 모든 unit은 제거됩니다.
+  ex) dabAcCaCBAcCcaDA => dabCBAcaDA
+  input: dabAcCaCBAcCcaDA
+  output: dabCBAcaDA
+  "
+  [polymer]
+  (reduce (fn [currenty-polymer next-unit]
+            (if (can-react? currenty-polymer next-unit)
+              (remove-last currenty-polymer)
+              (str currenty-polymer next-unit))) polymer))
+
+(defn text-to-list
+  [text]
+  (->> text
+       seq
+       (map str)))
+
+(defn part1-solution
+  []
+  (->> (read-file-as-string "resources/aoc2018_5.txt")
+       text-to-list
+       let-polymer-react
+       count))
+
+(defn get-all-unit
+  "
+  가능한 모든 unit(a-z)을 리턴하는 함수입니다. 해당 함수에서는 소문자만 리턴합니다.
+  ex)
+  input:
+  output: (a b c ... z)
+  "
+  []
+  (map char (range (int \a) (inc (int \z)))))
+
+(defn remove-unit-from-polymer
+  "
+  polymer에서 unit에 해당하는 모든 문자를 제거하는 함수입니다.
+  ex)
+  input: a abcdABCD
+  output: bcdBCD
+  "
+  [polymer unit]
+  (-> polymer
+      (string/replace (string/lower-case unit) "")
+      (string/replace (string/upper-case unit) "")))
+
+(defn part2-solution
+  []
+  (let [polymer (read-file-as-string "resources/aoc2018_5.txt")]
+    (->> (get-all-unit)
+         (map (partial remove-unit-from-polymer polymer))
+         (map text-to-list)
+         (map let-polymer-react)
+         (map count)
+         (apply min))))
+
+(comment
+  (map identity "abcde")
+  (str "a" "b")
+  (reduce str "abcde")
+  (part1-solution)
+  (part2-solution)
+  (remove-last "abc")
+  (let-polymer-react  "abcCdDBe")
+  (remove-unit-from-polymer \a "abAc")
+  (get-all-unit)
+  (->> (seq "abcCdDBe")
+       (map str)
+       (reduce (fn [currenty-polymer next-unit]
+                 (if (can-react? currenty-polymer next-unit)
+                   (remove-last currenty-polymer)
+                   (str currenty-polymer next-unit)))))
+  (last "abcde"))
+
+;; day1 part2 다시 풀기
+;; day5 part2 풀기
+;; day6 풀기
+
+;; 추가 과제: thread first와 thread last는 언제 어떻게 쓰는게 좋을까? 혹은... 왜 어떤 구현은 thread first이고 thread last일까?
+;; (map f coll) thread last
+;; (string str ...) thread first

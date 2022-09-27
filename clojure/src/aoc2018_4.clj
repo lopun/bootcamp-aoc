@@ -114,12 +114,12 @@
   input: [{:id 99 :sleep-info [36]}] {:time #object[org.joda.time.DateTime ...] :minute 55 :type :end :id nil}
   output: [{:id 99 :sleep-info [36 55]}]
   "
-  [grouped-list sleep-info]
+  [grouped-list {:keys [type id minute]}]
   ;; cond -> case
-  (case (:type sleep-info)
-        :guard (conj grouped-list {:id (:id sleep-info) :sleep-info []})
-        :start (update-in grouped-list [(dec (count grouped-list)) :sleep-info] conj (:minute sleep-info))
-        :end (update-in grouped-list [(dec (count grouped-list)) :sleep-info] conj (:minute sleep-info))))
+  (case type
+        :guard (conj grouped-list {:id id :sleep-info []})
+        :start (update-in grouped-list [(dec (count grouped-list)) :sleep-info] conj minute)
+        :end (update-in grouped-list [(dec (count grouped-list)) :sleep-info] conj minute)))
 
 (defn get-sleep-minutes
   "
@@ -146,7 +146,7 @@
   [sleep-minutes]
   (->> sleep-minutes
        frequencies
-       (sort-by val)
+       (sort-by val) ;; max-key 찾아서 수정
        last
        ((fn [[minute, times]] {:minute minute :times times}))))
 
@@ -217,8 +217,8 @@
   input: {:id 99, :total-sleep-time 30, :frequently-sleep-minute-and-times {:minute 45, :times 3}}
   output: 4455
   "
-  [sleep-summary]
-  (* (:minute (:frequently-sleep-minute-and-times sleep-summary)) (:id sleep-summary)))
+  [{:keys [frequently-sleep-minute-and-times id] :as _sleep-summary}]
+  (* (:minute frequently-sleep-minute-and-times) id))
 
 (defn part1-solution
   []
