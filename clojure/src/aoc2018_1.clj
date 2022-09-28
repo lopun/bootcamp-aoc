@@ -49,8 +49,8 @@
 (defn find-first-duplicate
   [sum-seq]
   (->> (distinct sum-seq)
-       (map (fn [original-num distinct-num] (if (not= original-num distinct-num) original-num nil)) sum-seq)
-       (filter #(not= nil %))
+       (map (fn [original-num distinct-num] (when-not (= original-num distinct-num) original-num)) sum-seq)
+       (filter some?) ; some? keep -> map & filter some 을 대체할 수 있다
        first))
 
 (defn part2-solution-seq-way []

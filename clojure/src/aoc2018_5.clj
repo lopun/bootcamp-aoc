@@ -67,7 +67,7 @@
   (let [compare-operator (if (upper-case? next-unit) string/lower-case string/upper-case)]
     (= (last-string currenty-polymer) (compare-operator next-unit))))
 
-(defn let-polymer-react
+(defn polymer-react
   "
   polymer를 반응시키는 함수입니다. 반응할 수 있는 모든 unit은 제거됩니다.
   ex) dabAcCaCBAcCcaDA => dabCBAcaDA
@@ -90,7 +90,7 @@
   []
   (->> (read-file-as-string "resources/aoc2018_5.txt")
        text-to-list
-       let-polymer-react
+       polymer-react
        count))
 
 (defn get-all-unit
@@ -107,12 +107,12 @@
   "
   polymer에서 unit에 해당하는 모든 문자를 제거하는 함수입니다.
   ex)
-  input: a abcdABCD
+  input: abcdABCD a
   output: bcdBCD
   "
   [polymer unit]
   (-> polymer
-      (string/replace (string/lower-case unit) "")
+      (string/replace unit "")
       (string/replace (string/upper-case unit) "")))
 
 (defn part2-solution
@@ -121,7 +121,7 @@
     (->> (get-all-unit)
          (map (partial remove-unit-from-polymer polymer))
          (map text-to-list)
-         (map let-polymer-react)
+         (map polymer-react)
          (map count)
          (apply min))))
 
@@ -132,7 +132,8 @@
   (part1-solution)
   (part2-solution)
   (remove-last "abc")
-  (let-polymer-react  "abcCdDBe")
+  (polymer-react  "abcCdDBe")
+  (polymer-react  (text-to-list "abcCdDBe"))
   (remove-unit-from-polymer \a "abAc")
   (get-all-unit)
   (->> (seq "abcCdDBe")
@@ -141,11 +142,14 @@
                  (if (can-react? currenty-polymer next-unit)
                    (remove-last currenty-polymer)
                    (str currenty-polymer next-unit)))))
-  (last "abcde"))
+  (last "abcde")
+  )
 
-;; day1 part2 다시 풀기
-;; day5 part2 풀기
-;; day6 풀기
+;; Done ; day1 part2 다시 풀기
+;; Done ; day5 part2 풀기
+;; Done ; day6 풀기
+
+;; TODO: Character 기반으로 reduce 돌려보기(?) -> String 비교를 Character로 진행해보기
 
 ;; 추가 과제: thread first와 thread last는 언제 어떻게 쓰는게 좋을까? 혹은... 왜 어떤 구현은 thread first이고 thread last일까?
 ;; (map f coll) thread last
