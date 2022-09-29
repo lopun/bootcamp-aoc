@@ -95,7 +95,7 @@
   [coords {:keys [x y]}]
   (->> coords
        (map (fn [coord] {:coord coord
-                              :manhattan-dist (calc-manhattan-dist coord {:x x :y y})}))
+                         :manhattan-dist (calc-manhattan-dist coord {:x x :y y})}))
        (sort-by :manhattan-dist asc)))
 
 (defn get-unique-closest-coordiate-or-nil
@@ -201,6 +201,21 @@
         {:keys [bottom top left right]} (get-border-coords width height closest-cord-in-area-limit)]
     (into #{} (filter some? (concat bottom top left right))))) ;; filter some? into keep -> 리팩토링 필요
 
+(defn get-infinite-coords-v2
+  "
+  get-border-coords 함수에서 구한 가장자리 좌표들을 바탕으로
+  무한히 뻗어나갈 수 있는 좌표들의 set을 구해주는 함수입니다.
+
+  ex)
+  input: ({:x 1 :y 1} {:x 3 :y 2} {:x 3 :y 3} {:x 4 :y 4}) {:min-x 1 :min-y 1 :max-x 4 :max-y 4}
+  output: #{{:x 1 :y 1} {:x 4 :y 4}}
+  "
+  [coords {:keys [min-x min-y max-x max-y] :as _area_limits}]
+  (->> coords
+       (filter (fn [{:keys [x y]}] (or (= x min-x) (= x max-x) (= y min-y) (= y max-y))))
+       (filter some?)
+       (into #{})))
+
 (defn get-area-summary
   "
   입력 좌표값들에 대해서 요약을 해주는 함수입니다.
@@ -215,7 +230,7 @@
   [coords]
   (let [area-limits (get-area-limits coords)
         closest-coord-in-area-limits (get-closest-coord-in-area-limits coords area-limits)
-        infinite-coords (get-infinite-coords closest-coord-in-area-limits area-limits)
+        infinite-coords (get-infinite-coords-v2 coords area-limits)
         finite-coords (set/difference (into #{} coords) infinite-coords)]
     {:area-limits area-limits
      :closest-coord-in-area-limits closest-coord-in-area-limits
@@ -271,11 +286,11 @@
   input: ({:x 1 :y 1} ... {:x 4 :y 4}) ({:x 1 :y 1} ... {:x 4 :y 4})
   output: (8 7 9 3 17 18 ...)
   "
-  [coords coords-in-area-limits]
-  (map (fn [coord-in-area-limit]
-         (->> coords
-              (map #(calc-manhattan-dist coord-in-area-limit %))
-              (reduce +))) coords-in-area-limits)) ;; map 안에 map -> 따로 빼기
+  [coords coord]
+  (->> coords
+       (map #(calc-manhattan-dist coord %))
+       (reduce +)))
+
 ;; (clojure.java.io/resource "aoc2018_6.txt")
 ;; border에 대해서 숫자가 이미 10000이 넘어간다. 따라서 border 내에서 10000인 좌표들을 찾으면 된다.
 (defn part2-solution
@@ -285,7 +300,7 @@
     (->> coords
          get-area-summary
          (#(get-coords-in-area-limits (:area-limits %)))
-         (calc-manhattan-dist-in-area-limits coords)
+         (map #(calc-manhattan-dist-in-area-limits coords %))
          (filter #(< % 32))
          count)))
 
