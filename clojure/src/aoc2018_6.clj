@@ -212,8 +212,7 @@
   "
   [coords {:keys [min-x min-y max-x max-y] :as _area_limits}]
   (->> coords
-       (filter (fn [{:keys [x y]}] (or (= x min-x) (= x max-x) (= y min-y) (= y max-y))))
-       (filter some?)
+       (keep (fn [{:keys [x y]}] (or (= x min-x) (= x max-x) (= y min-y) (= y max-y))))
        (into #{})))
 
 (defn get-area-summary
