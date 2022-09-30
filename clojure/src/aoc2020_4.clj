@@ -1,6 +1,7 @@
 (ns aoc2020_4
   (:require [clojure.string :as string]
-            [file-util :refer [read-file-as-list]]))
+            [file-util :refer [read-file-as-list]]
+            [clojure.spec.alpha :as s]))
 
 (defn matching-pattern-or-nil
   [pattern text]
@@ -51,34 +52,43 @@
          count
          (= required-fields-count))))
 
+;; byr (Birth Year) - four digits; at least 1920 and at most 2002.
+(s/def :acct/byr (s/and #(>= % 1920) #(<= % 2002)))
+;; iyr (Issue Year) - four digits; at least 2010 and at most 2020.
+(s/def :acct/iyr (s/and #(>= % 2010) #(<= % 2020)))
+;; eyr (Expiration Year) - four digits; at least 2020 and at most 2030.
+(s/def :acct/eyr (s/and #(>= % 2020) #(<= % 2030)))
+;; hgt (Height) - a number followed by either cm or in:
+;; If cm, the number must be at least 150 and at most 193.
+;; If in, the number must be at least 59 and at most 76.
+(s/def :acct/hgt (fn [hgt]
+                   (cond (:is-inch hgt) (s/and (>= (:num hgt) 59) (<= (:num hgt) 76))
+                         (:is-cm hgt) (s/and (>= (:num hgt) 150) (<= (:num hgt) 193))
+                         :else nil)))
+;; hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
+(s/def :acct/hcl #(matching-pattern-or-nil #"#([0-9a-f]{6})$" %))
+;; ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
+(s/def :acct/ecl (fn [ecl]
+                   (some #(= ecl %) ["amb" "blu" "brn" "gry" "grn" "hzl" "oth"])))
+;; pid (Passport ID) - a nine-digit number, including leading zeroes.
+(s/def :acct/pid #(matching-pattern-or-nil #"(\d{9})$" %))
+(s/def :acct/cid (s/nilable int?))
+(s/def :acct/passport (s/keys :req [:acct/byr :acct/iyr :acct/eyr :acct/hgt :acct/hcl :acct/ecl :acct/pid]
+                              :opt [:acct/cid]))
+
+
 (defn strictly-validate-passport
   [passport]
-  (let [{:keys [byr iyr eyr hgt hcl ecl pid]} passport]
-    (if (validate-passport passport)
-      (println ecl (some #(= ecl %) ["amb" "blu" "brn" "gry" "grn" "hzl" "oth"])))
-    (when (and
-           (validate-passport passport)
-           ;; byr (Birth Year) - four digits; at least 1920 and at most 2002.
-           (>= byr 1920)
-           (<= byr 2002)
-           ;; iyr (Issue Year) - four digits; at least 2010 and at most 2020.
-           (>= iyr 2010)
-           (<= iyr 2020)
-           ;; eyr (Expiration Year) - four digits; at least 2020 and at most 2030.
-           (>= eyr 2020)
-           (<= eyr 2030)
-           ;; hgt (Height) - a number followed by either cm or in:
-           ;; If cm, the number must be at least 150 and at most 193.
-           ;; If in, the number must be at least 59 and at most 76.
-           (cond (:is-inch hgt) (and (>= (:num hgt) 59) (<= (:num hgt) 76))
-                 (:is-cm hgt) (and (>= (:num hgt) 150) (<= (:num hgt) 193))
-                 :else nil)
-           ;; hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
-           (matching-pattern-or-nil #"#([0-9a-f]{6})$" hcl)
-           ;; ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
-           (some #(= ecl %) ["amb" "blu" "brn" "gry" "grn" "hzl" "oth"])
-           ;; pid (Passport ID) - a nine-digit number, including leading zeroes.
-           (matching-pattern-or-nil #"(\d{9})$" pid)) true)))
+  (let [{:keys [byr iyr eyr hgt hcl ecl pid cid]} passport]
+    (println passport)
+    (s/valid? :acct/passport {:acct/byr byr
+                              :acct/iyr iyr
+                              :acct/eyr eyr
+                              :acct/hgt hgt
+                              :acct/hcl hcl
+                              :acct/ecl ecl
+                              :acct/pid pid
+                              :acct/cid cid})))
     
 
 (defn part1-solution
@@ -94,6 +104,7 @@
   (->> (read-file-as-list "aoc2020_4.txt")
        group-password-text
        (map strictly-parse-passport)
+       (filter validate-passport)
        (filter strictly-validate-passport)
        count))
 
@@ -101,12 +112,20 @@
   (reduce + #{1 2})
   (part1-solution)
   (part2-solution)
+  (strictly-validate-passport {:byr 1980, :iyr 2012, :eyr 2030, :hgt {:num 74, :is-inch true, :is-cm nil}, :hcl "#623a2f", :ecl "grn", :pid "087499704", :cid nil})
+  (s/valid? :acct/passport ((:acct/byr 2003)
+                            #_(:acct/iyr iyr)
+                            #_(:acct/eyr eyr)
+                            #_(:acct/hgt hgt)
+                            #_(:acct/hcl hcl)
+                            #_(:acct/ecl ecl)
+                            #_(:acct/pid pid)
+                            #_(:acct/cid cid)))
   (get [1 2] 1)
   (some? [1 2 nil])
-(->> (read-file-as-list "aoc2020_4.txt")
+  (->> (read-file-as-list "aoc2020_4.txt")
        group-password-text
-       (map parse-passport)
-       )
+       (map parse-passport))
   (->> (read-file-as-list "aoc2020_4.txt")
        group-password-text
        (map parse-passport))
@@ -116,6 +135,21 @@
   (matching-pattern-or-nil #"hcl:#([0-9a-f]{6})" "ecl:gry pid:860033327 eyr:2020 hcl:#fffffd byr:1937 iyr:2017 cid:147 hgt:183cm")
   (matching-pattern-or-nil #"hcl:#([0-9a-f]{6})$" "hcl:#fffffd")
   (contains? ["amb" "blu" "brn" "gry" "grn" "hzl" "oth"] "amb")
-  (and true true true)
-  (and true true false)
-  (Long/parseLong "8261494500"))
+  (Long/parseLong "8261494500")
+  )
+
+;; TODO
+;; spec 읽어서 해당 라이브러리 기반으로 리펙토링 다시 진행해보기. (https://johngrib.github.io/wiki/clojure/guide/spec/)
+;; 이 링크도 읽어보기 -> https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
+;; 위 링크 2개 읽고 4번문제 마저 풀어도 좋을 것 같다
+;; 2020-6번 & 2018-7번 문제 마저 풀이 해야 한다. (til tomorrow)
+;; -> 18/7번이 제일 어렵고 20/6번은 상대적으로 쉬운데 18/7번 풀이의 선행이 된다.
+;; looping & 상태 관리가 빡세다. reduce를 써야 할 수도 있는데...
+;; iterate / drop-while / take-while
+;; 상태를 관리해야하고, 계속 반복 작업해야한다..
+;; (comment
+;;   (->> init-state ;; Parse
+;;        iterate ;; core함수 ; process
+;;        stop ;; drop-while/take-while ;; core함수
+;;        agg ; agg
+;;        ans)) ; print

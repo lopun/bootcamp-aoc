@@ -15,11 +15,11 @@
   (->> (for [x elems y elems z elems]
          (when-not (or (= x y) (= x z) (= y z)) #{x y z}))
        (keep identity)
-       distinct)) ;; 그냥 keep은 안되는 것 같습니다
+       distinct))
 
 (defn find-matching-sum-then-multiply
   [sum-value set-value]
-  (when (= (reduce + set-value) sum-value) (reduce * set-value)))
+  (when (= (apply + set-value) sum-value) (apply * set-value)))
 
 (defn part1-solution
   []
@@ -45,3 +45,6 @@
   (part1-solution)
   (part2-solution)
   (combo/combinations [1 2 3] 2))
+
+;; reduce 대신 apply를 사용해도 되는지 -> sequence 인자들 적용 가능한지 확인
+;; clojure에서 for loop 자체가 일반적인 for loop랑 다르다.
