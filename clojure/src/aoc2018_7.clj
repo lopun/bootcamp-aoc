@@ -35,3 +35,5 @@
   (part1-solution)
   (sort ["a" "c" "b"])
   (parse-step "Step C must be finished before step A can begin."))
+
+;; 2020/8 선행으로 먼저 풀이 시작 (part2 참고)
