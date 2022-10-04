@@ -5,8 +5,8 @@
 
 (defn matching-pattern-or-nil
   [pattern text]
-  (let [found-pattern (re-find pattern text)]
-    (when found-pattern (second found-pattern))))
+  (when-let [found-pattern (re-find pattern text)] ;; when-let으로 리펙토링 가능
+    (second found-pattern)))
 
 (defn group-password-text
   [seperated-texts]
@@ -16,7 +16,7 @@
 
 (defn if-exists-parse-long
   [text]
-  (when text (Long/parseLong text)))
+  (when text (parse-long text))) ; clojure 1.10.xx -> 1.11.xx parse-long
 
 (defn parse-passport
   [passport-text]
@@ -35,7 +35,7 @@
    :iyr (if-exists-parse-long (matching-pattern-or-nil #"iyr:(\d+)" passport-text))
    :eyr (if-exists-parse-long (matching-pattern-or-nil #"eyr:(\d+)" passport-text))
    :hgt (let [hgt-text (matching-pattern-or-nil #"hgt:(\w+)" passport-text)]
-          (when hgt-text {:num (Long/parseLong (matching-pattern-or-nil #"(\d+)" hgt-text))
+          (when hgt-text {:num (parse-long (matching-pattern-or-nil #"(\d+)" hgt-text))
                           :is-inch (when (matching-pattern-or-nil #"(\d+in)" hgt-text) true)
                           :is-cm (when (matching-pattern-or-nil #"(\d+cm)" hgt-text) true)}))
    :hcl (matching-pattern-or-nil #"hcl:(#\w+)" passport-text)
@@ -53,7 +53,7 @@
          (= required-fields-count))))
 
 ;; byr (Birth Year) - four digits; at least 1920 and at most 2002.
-(s/def :acct/byr (s/and #(>= % 1920) #(<= % 2002)))
+(s/def :acct/byr (s/and #(>= % 1920) #(<= % 2002))) ;; int-in으로 리펙토링 가능 (https://clojuredocs.org/clojure.spec.alpha/int-in)
 ;; iyr (Issue Year) - four digits; at least 2010 and at most 2020.
 (s/def :acct/iyr (s/and #(>= % 2010) #(<= % 2020)))
 ;; eyr (Expiration Year) - four digits; at least 2020 and at most 2030.
@@ -62,9 +62,10 @@
 ;; If cm, the number must be at least 150 and at most 193.
 ;; If in, the number must be at least 59 and at most 76.
 (s/def :acct/hgt (fn [hgt]
-                   (cond (:is-inch hgt) (s/and (>= (:num hgt) 59) (<= (:num hgt) 76))
-                         (:is-cm hgt) (s/and (>= (:num hgt) 150) (<= (:num hgt) 193))
+                   (cond (:is-inch hgt) (s/and (>= (:num hgt) 59) (<= (:num hgt) 76)) ;; (<= 59 hgt 76) 으로 리펙토링 가능
+                         (:is-cm hgt) (s/and (>= (:num hgt) 150) (<= (:num hgt) 193)) ;; (+ 1 1 2 3 4 5 6 6 7 8 9 0 0)
                          :else nil)))
+
 ;; hcl (Hair Color) - a # followed by exactly six characters 0-9 or a-f.
 (s/def :acct/hcl #(matching-pattern-or-nil #"#([0-9a-f]{6})$" %))
 ;; ecl (Eye Color) - exactly one of: amb blu brn gry grn hzl oth.
@@ -73,14 +74,17 @@
 ;; pid (Passport ID) - a nine-digit number, including leading zeroes.
 (s/def :acct/pid #(matching-pattern-or-nil #"(\d{9})$" %))
 (s/def :acct/cid (s/nilable int?))
-(s/def :acct/passport (s/keys :req [:acct/byr :acct/iyr :acct/eyr :acct/hgt :acct/hcl :acct/ecl :acct/pid]
+(s/def :acct/passport (s/keys :req [:acct/byr :acct/iyr :acct/eyr :acct/hgt :acct/hcl :acct/ecl :acct/pid] ;; req-un, opt-un으로 리펙토링
                               :opt [:acct/cid]))
 
+;; unqualified...
+;; qualified...
+;; (clojure.core/keep) -> qualified
+;; (keep) -> unqualified
 
 (defn strictly-validate-passport
   [passport]
   (let [{:keys [byr iyr eyr hgt hcl ecl pid cid]} passport]
-    (println passport)
     (s/valid? :acct/passport {:acct/byr byr
                               :acct/iyr iyr
                               :acct/eyr eyr

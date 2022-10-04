@@ -18,7 +18,7 @@
   [answers]
   (let [people-count (count answers)]
     (->> answers
-         (mapcat #(string/split % #""))
+         (mapcat #(string/split % #"")) ;; mapcat 하는 부분 두가지 함수에서 중복된다. 따로 빼기
          frequencies
          vals
          (filter #(= % people-count))
@@ -36,22 +36,13 @@
   (->> (read-file "aoc2020_6.txt")
        group-people
        (map count-answers-everyone-answered-yes)
-       (reduce +)))
+       (apply +))) ;; reduce + 대신 apply +
 
 
 (comment
   (reduce + #{1 2})
   (part1-solution)
   (part2-solution)
-  (strictly-validate-passport {:byr 1980, :iyr 2012, :eyr 2030, :hgt {:num 74, :is-inch true, :is-cm nil}, :hcl "#623a2f", :ecl "grn", :pid "087499704", :cid nil})
-  (s/valid? :acct/passport ((:acct/byr 2003)
-                            #_(:acct/iyr iyr)
-                            #_(:acct/eyr eyr)
-                            #_(:acct/hgt hgt)
-                            #_(:acct/hcl hcl)
-                            #_(:acct/ecl ecl)
-                            #_(:acct/pid pid)
-                            #_(:acct/cid cid)))
   (get [1 2] 1)
   (some? [1 2 nil])
   (->> (read-file-as-list "aoc2020_4.txt")
